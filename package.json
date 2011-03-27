@@ -1,0 +1,11 @@
+{
+  "name": "javascript-bson",
+  "main" : "./lib/bson.js",
+	"description" : "BSON encoder/decoder written in JavaScript",
+    "version" : "0.0.1",
+    "author" : "Roope Kangas",
+	"repository" : {
+		"type" : "git",
+		"url" : "git@github.com:muhmi/javascript-bson.git"
+    }
+}
