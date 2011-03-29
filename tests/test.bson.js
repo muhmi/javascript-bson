@@ -8,14 +8,18 @@ assert.deepEqual(result, object);
 console.dir(result);
 
 
-var object2 = {somenullstuff: null, other: 10};
-var pack2 = new bson.Encoder().encode(object2);
-
-console.log(pack2);
+console.log(bson.decode(bson.encode({data: 2001})).data);
 
 
-var result = parser.parse(pack2);
+var buf = new Buffer(2000);
+for (var i = 0; i < 2000; i++) buf[i] = (1<<(i%8)) & 0xff;
 
-console.dir(result);
+var data = bson.encode({data: buf});
 
+console.log(data);
 
+var res = bson.decode(data);
+
+console.log(res.data.length);
+
+//assert.ok(res.data.length==2000);
